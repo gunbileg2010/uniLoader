@@ -123,6 +123,14 @@ menu "Device Support"
 		help
 		  Say Y if you want to include support for Samsung Galaxy A12 Nacho
 
+	config SAMSUNG_A145F
+		bool "Support for Samsung Galaxy A14 4G"
+		default n
+		depends on EXYNOS_3830
+		help
+		  Say Y if you want to include support for the Samsung Galaxy A14 4G
+		  variant running the Exynos 850 platform.
+
 	config SAMSUNG_A30
 		bool "Support for Samsung Galaxy A30"
 		default n
@@ -308,17 +316,20 @@ menu "Device Specific Addresses"
 	config TEXT_BASE
 		hex "UniLoader Text Base"
 		default 0x0
+		default 0x90000000 if SAMSUNG_A145F
 
 	config PAYLOAD_ENTRY
 		hex "Payload Entry Address"
 		default 0x50000000 if NOTHING_TETRIS
 		default 0x050000000 if SAMSUNG_J4LTE
+		default 0x80080000 if SAMSUNG_A145F
 		default 0x60000000 if VOLLA_ALGIZ
 		default 0x50000000 if XIAOMI_BEGONIA
 
 	config RAMDISK_ENTRY
 		hex "Ramdisk Entry Address"
 		default 0x40000000 if NOTHING_TETRIS
+		default 0x84000000 if SAMSUNG_A145F
 		default 0x51100000 if VOLLA_ALGIZ
 		default 0x48000000 if XIAOMI_BEGONIA
 endmenu
