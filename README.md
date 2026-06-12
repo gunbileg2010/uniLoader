@@ -2,7 +2,7 @@
 
 **uniLoader** is a minimalistic loader, capable of booting Linux kernels.
 It can be used as an intermediate bootloader, providing a clean booting
-environment in case of a forced and buggy bootloader.
+environment in case of a forced and buggy bootloader. and this is in a work in progress
 
 ---
 
